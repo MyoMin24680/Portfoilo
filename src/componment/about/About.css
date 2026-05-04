@@ -1,0 +1,75 @@
+main {
+  margin: 45px 18px;
+ 
+ 
+}
+
+/* Header */
+.header-line h1{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #1c1c1c;
+}
+.header-line hr {
+  margin: 17px 0;
+  
+  border-color: #1c1c1c;
+}
+
+/* ================= ABOUT SECTION ================= */
+.img-text {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem; /* Adjusted gap for better tablet spacing */
+  flex-wrap: nowrap; /* Prevent wrapping on tablet-sized screens */
+  margin-top: 2rem;
+}
+
+.img-text img {
+  /* Set a relative width for tablet flexibility */
+  width: 40%; 
+  max-width: 450px;
+  min-width: 280px; /* Ensures image doesn't get too tiny */
+  height: auto;
+  flex-shrink: 0;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 500px;
+  color: #1c1c1c;
+}
+
+.about-text h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+  line-height: 1;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ================= RESPONSIVE LOGIC ================= */
+
+/* MOBILE ONLY (Stack vertically only on phones) */
+@media (max-width: 600px) {
+  .img-text {
+    flex-wrap: wrap; /* Allow wrapping on mobile */
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .img-text img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+}

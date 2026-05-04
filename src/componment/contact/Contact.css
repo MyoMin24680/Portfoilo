@@ -1,0 +1,222 @@
+.contact-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap-reverse;
+  gap: 40px;
+}
+.logo-part {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.logo-part img {
+  width: 200px;
+  margin-bottom: 2rem;
+}
+
+.logo-part a {
+  color: #1c1c1c;
+}
+
+/* START FORM */
+form {
+  width: 100%;
+  max-width: 700px; /* Desktop မှာ အရမ်းကြီးမသွားအောင် ကန့်သတ်ထားခြင်း */
+  padding: 2rem 1rem; /* ဘေးဘောင် အကွာအဝေး ညှိရန် */
+  gap: 30px; /* input တစ်ခုနဲ့တစ်ခု ကြား အကွာအဝေး လျှော့ရန် */
+
+  display: flex;
+ flex: 1 1 400px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form .form-header {
+  text-align: center;
+
+  width: 100%;
+  text-transform: uppercase;
+  font-size: clamp(0.7rem, 2vw, 1rem);
+
+  /* Use flex to keep everything centered easily */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form .form-header hr {
+  border: none;
+  border-top: 1px solid #1c1c1c80;
+
+  margin-top: 0.5rem;
+  opacity: 1;
+  width: 30%;
+  /* This ensures it doesn't get too small on mobile or too big on tablet */
+  min-width: 250px; 
+  max-width: 350px; 
+
+  /* Keeps it centered */
+  margin-left: auto;
+  margin-right: auto;
+}
+form input {
+  background-color: transparent;
+  width: 65%;
+  border: none;
+  border-bottom: 1px solid #1c1c1c;
+
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+form input::placeholder {
+  color: #1c1c1c;
+}
+form textarea {
+  background-color: transparent;
+  width: 65%;
+  height: 90px;
+  border: none;
+  border: 1px solid #1c1c1c;
+
+  outline: none;
+}
+form .send-btn {
+  cursor: pointer;
+  width: 65%;
+  background-color: #1c1c1c;
+  color: #f8f9fa;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  box-shadow: 2px 3px 5px #1c1c1c62;
+  padding: 5px 0;
+}
+form .send-btn:hover {
+  background-color: transparent;
+  color: #1c1c1c;
+  border: 1px solid #1c1c1c;
+}
+/* Ensure inputs take up more space on smaller screens */
+form input, 
+form textarea, 
+form .send-btn {
+  width: 100%; /* Better for responsiveness than a fixed 65% */
+  max-width: 450px; /* Keeps them from getting too wide on ultra-wide screens */
+}
+
+form textarea {
+  height: 120px; /* Slightly taller for better UX */
+  padding: 10px;
+  box-sizing: border-box; /* Prevents padding from breaking width */
+}
+/* END FORM */
+
+/* START LINK */
+.link-gp img {
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+}
+/* END LINK */
+@media (max-width: 1024px) {
+  .contact-body {
+    gap: 60px;
+    padding: 0 20px;
+  }
+  
+  .logo-part img {
+    width: 180px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .contact-body {
+    gap: 30px;
+    margin-top: 1rem;
+  }
+
+  form {
+    padding: 1rem 0;
+  }
+
+  form .form-header {
+    font-size: 1rem;
+  }
+
+  .logo-part img {
+    width: 140px;
+  }
+
+  .link-gp img {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+  }
+} 
+
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Tooltip text (အစပိုင်းမှာ ဖျောက်ထားမယ်) */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #1c1c1c; /* မင်းရဲ့ theme အနက်ရောင် */
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Icon ရဲ့ အပေါ်မှာ ပေါ်စေရန် */
+  left: 50%;
+  margin-left: -70px; /* အလယ်တည့်တည့်ဖြစ်အောင် width ရဲ့ တစ်ဝက် ပြန်နုတ်ခြင်း */
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.8rem;
+}
+
+/* Hover လုပ်တဲ့အခါ Tooltip ကို ပြမယ် */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Tooltip ရဲ့ အောက်ခြေက မြားပုံစံလေး (Optional) */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #1c1c1c transparent transparent transparent;
+}
+
+/*END Tooltip container */
+
+/* MAILTO */
+.email-link {
+  color: #1c1c1c; /* မင်းရဲ့ theme အရောင် */
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.email-link:hover {
+  color: red; /* Hover လုပ်ရင် အနီရောင်ပြောင်းမယ် */
+  text-decoration: underline;
+}

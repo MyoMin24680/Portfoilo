@@ -1,0 +1,154 @@
+
+.container{
+
+    background-color: #1c1c1c;
+    margin-top: 20px;
+    color: #f8f9fa;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #1c1c1c56;
+}
+
+.ex-sk{
+
+    display: flex;                    /* Flexbox စတင်သုံးခြင်း */
+    flex-wrap: wrap;                  /* Screen သေးရင် အောက်ကို အလိုအလျောက် ဆင်းသွားမယ် */
+    gap:  40px;                        /* Experience နဲ့ Skill ကြားမှာ နေရာလွတ် ပေးခြင်း */
+    justify-content: space-between;   /* တစ်ခုကို ဘယ်၊ တစ်ခုကို ညာမှာ ထားမယ် */
+    align-items: flex-start;          /* အပေါ်ကနေ တန်းညှိမယ် */
+    padding: 10px
+
+}
+
+
+/* START HEADER AND HR */
+.ex-sk-header h2 ,.sk-ex-header h2{
+
+    font-size: clamp(1.2rem, 4vw, 2rem);    /* ခေါင်းစဉ်ကို Screen အလိုက် ညှိမယ် */
+    margin: 2rem 0;
+
+   
+}
+.sk-header h3 ,.ex-header h3 {
+
+    margin-bottom: 15px;                   /* h3 နဲ့ hr ကြား အကွာအဝေးကို နည်းစေချင်ရင် 5px လောက်ပဲ ပေးပါ */
+    text-transform: uppercase;
+}
+
+.sk-header hr ,.ex-header hr{
+
+    border: none;                      /* default border ကို ဖျောက်ပါ */
+    border-top: 4px solid white;     /* မျဉ်းကြောင်း အထူနဲ့ အရောင်ကို သတ်မှတ်ပါ */
+    border-radius: 50%;
+    margin-top: 0;                     /* h3 နဲ့ ပိုကပ်သွားအောင် margin-top ကို 0 ထားပါ */
+    opacity: 1;                        /* မျဉ်းကြောင်းကို အထင်သား ပေါ်စေချင်ရင် */
+    width: 100%;                       /* မျဉ်းအရှည် */
+
+}
+
+
+/* END HEADER AND HR */
+
+
+/* EX SK CONTAINER ADN BODY */
+
+.container-ex, .container-sk {
+
+    flex: 1 1 400px;  
+    padding: 1rem;                /* အနည်းဆုံး 300px ရှိရမယ်၊ နေရာရှိရင် ကြီးလာမယ် */
+
+}
+.ex-body p, .sk-body p {
+
+    text-transform: capitalize;
+    margin-top: 1rem;
+    line-height: 2;             /* စာကြောင်းအကွာအဝေးကို ပိုဖတ်ကောင်းအောင် ညှိခြင်း */
+
+}
+
+
+.ex-body p {
+
+    display: flex;                         /* Flexbox သုံးပြီး ဘေးချင်းယှဉ်စေခြင်း */
+    justify-content: space-between;        /* စာသားကို ဘယ်၊ ခုနှစ်ကို ညာ ကပ်ပေးခြင်း */
+    align-items: center;                   /* အပေါ်အောက် အလယ်တည့်တည့် ညှိခြင်း */
+    width: 100%;                           /* နေရာအပြည့်ယူစေခြင်း */
+    margin-bottom: 10px;  
+    gap: 17px;                             /* စာကြောင်းများ ကြားအကွာအဝေး */
+    
+    
+    font-size: clamp(0.7rem, 2vw, 1rem); 
+
+}
+
+.ex-body span {
+
+    white-space: nowrap;          /* ခုနှစ်ကို စာကြောင်းမဆင်းသွားအောင် တားခြင်း */
+    margin-left: 10px;            /* စာသားနဲ့ အရမ်းမကပ်အောင် နေရာချန်ခြင်း */
+    float: none;                  /* အရင်က float သုံးထားရင် ဒါနဲ့ ပြန်ဖျက်ပါ */
+
+}
+
+.sk-body{
+    
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 18px;
+
+}
+
+/* END EX SK CONTAINER ADN BODY */
+
+
+
+/* START EDUCATION AND SOFTWARE */
+
+.ed-so{
+
+    padding: 20px;
+    
+}
+.education{
+    margin-bottom: 50px;
+}
+
+.ed-header h3,.so-header h3{
+      margin-bottom: 15px;                   /* h3 နဲ့ hr ကြား အကွာအဝေးကို နည်းစေချင်ရင် 5px လောက်ပဲ ပေးပါ */
+    text-transform: uppercase;
+
+}
+
+.ed-header hr ,.so-header hr{
+
+    border: none;                      /* default border ကို ဖျောက်ပါ */
+    border-top: 4px solid white;     /* မျဉ်းကြောင်း အထူနဲ့ အရောင်ကို သတ်မှတ်ပါ */
+    border-radius: 50%;
+    margin-top: 0;                     /* h3 နဲ့ ပိုကပ်သွားအောင် margin-top ကို 0 ထားပါ */
+    opacity: 1;                        /* မျဉ်းကြောင်းကို အထင်သား ပေါ်စေချင်ရင် */
+    width: 100%;                       /* မျဉ်းအရှည် */
+
+}
+.ed-body ,.so-body{
+  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+   
+
+   
+}
+
+.ed-body p, .so-body p {
+
+
+    text-transform: capitalize;
+   
+    line-height: 2;             /* စာကြောင်းအကွာအဝေးကို ပိုဖတ်ကောင်းအောင် ညှိခြင်း */
+    margin: 20px 20px 0 0;
+ 
+
+}
+
+/* END EDUCATION AND SOFTWARE */
