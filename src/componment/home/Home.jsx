@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 import './Home.css'
 import photo from '../../assets/image/heroimage.png'
-import line from '../../assets/image/line9.png'
+import line from '../../assets/image/Line9.png'
 
 
 
@@ -14,7 +14,7 @@ import css from '../../assets/image/css.png'
 import sass from '../../assets/image/sass.png'
 import mysql from '../../assets/image/mysql.png'
 import js from '../../assets/image/js.png'
-import react from '../../assets/image/React.png'
+import react from '../../assets/image/react.png'
 import redux from '../../assets/image/redux.png'
 
 import bootstrap from '../../assets/image/bootstrap.png'
