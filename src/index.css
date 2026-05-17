@@ -46,3 +46,53 @@ main {
     transform: translateY(0);
   }
 }
+
+/* ======= SHARED ANIMATION CLASSES ======= */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Delay utilities */
+.d-1 { transition-delay: 0.1s; }
+.d-2 { transition-delay: 0.2s; }
+.d-3 { transition-delay: 0.3s; }
+.d-4 { transition-delay: 0.4s; }
+.d-5 { transition-delay: 0.5s; }
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

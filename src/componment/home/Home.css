@@ -97,3 +97,42 @@ section #home {
 .detail button:hover {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.534);
 }
+
+/* ======= HOME ANIMATIONS ======= */
+#home header {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: homeHeaderIn 0.7s ease 0.1s forwards;
+}
+
+@keyframes homeHeaderIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.img-gp {
+  opacity: 0;
+  animation: homeImgIn 0.8s ease 0.3s forwards;
+}
+
+@keyframes homeImgIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.detail {
+  opacity: 0;
+  animation: homeDetailIn 0.7s ease 0.5s forwards;
+}
+
+@keyframes homeDetailIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Icon hover effect */
+.icon-gp img {
+  transition: transform 0.2s ease;
+}
+.icon-gp img:hover {
+  transform: translateY(-4px);
+}

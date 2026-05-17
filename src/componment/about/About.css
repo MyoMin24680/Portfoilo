@@ -1,23 +1,19 @@
 main {
   margin: 45px 18px;
- 
- 
 }
 
-/* Header */
 .header-line {
   padding: 2rem 1%;
-  
 }
-.header-line h1{
+
+.header-line h1 {
   font-size: 2.5rem;
   text-transform: uppercase;
   color: #1c1c1c;
-
 }
+
 .header-line hr {
   margin: 17px 0;
-  
   border-color: #1c1c1c;
 }
 
@@ -26,16 +22,15 @@ main {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 3rem; /* Adjusted gap for better tablet spacing */
-  flex-wrap: nowrap; /* Prevent wrapping on tablet-sized screens */
+  gap: 3rem;
+  flex-wrap: nowrap;
   margin-top: 2rem;
 }
 
 .img-text img {
-  /* Set a relative width for tablet flexibility */
-  width: 40%; 
+  width: 40%;
   max-width: 450px;
-  min-width: 280px; /* Ensures image doesn't get too tiny */
+  min-width: 280px;
   height: auto;
   flex-shrink: 0;
 }
@@ -47,7 +42,7 @@ main {
 }
 
 .about-text h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 500;
   margin: 0 0 1rem 0;
   line-height: 1;
@@ -59,12 +54,10 @@ main {
   margin: 0;
 }
 
-/* ================= RESPONSIVE LOGIC ================= */
-
-/* MOBILE ONLY (Stack vertically only on phones) */
+/* ================= MOBILE ================= */
 @media (max-width: 600px) {
   .img-text {
-    flex-wrap: wrap; /* Allow wrapping on mobile */
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 1.5rem;
   }
@@ -72,6 +65,7 @@ main {
   .img-text img {
     width: 100%;
     max-width: 100%;
+    min-width: unset;
   }
 
   .about-text {
