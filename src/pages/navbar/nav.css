@@ -3,51 +3,34 @@
   --color-black: #1c1c1c;
 }
 
-header {
-  
-  position: sticky;
-  top: 0;
-  z-index: 1000; /* Must be active */
-  width: 100%;
-  
- 
+img {
+  width: 60px;
 }
-img{
-  width:60px;
-  
-}
+
 nav {
-  width: 100%; /* Better than 100vw to avoid layout shifting */
-  min-height: 50px; /* Give it enough room for the text */
+  width: 100%;
+  min-height: 50px;
   background-color: var(--color-white);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px; /* Add padding instead of large margins */
+  padding: 10px 20px;
   box-sizing: border-box;
   transition: all 0.3s ease;
-
-  
-  
 }
+
 header.nav-scrolled nav {
-  box-shadow: 0 10px 8px -6px  rgba(24, 24, 24, 0.534);
-  padding-top: 10px;   
-   /* Optional: shrink nav slightly on scroll */
+  box-shadow: 0 10px 8px -6px rgba(24, 24, 24, 0.534);
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
 nav ul li {
   display: inline-block;
-  color: var(--color-black);
-  text-decoration: none;
-
-  cursor: pointer;
   position: relative;
-
-  white-space: nowrap;
 }
-/* link edit */
+
+/* ---- Base link ---- */
 nav ul .custom-link {
   display: inline-block;
   color: var(--color-black);
@@ -58,50 +41,52 @@ nav ul .custom-link {
   font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   font-weight: 500;
   margin: 0 10px;
+  padding-bottom: 4px;   /* space for the underline */
 }
 
-/* Link effect */
+/* ---- Single underline that handles BOTH hover and active ---- */
 .custom-link::after {
   content: "";
-
-  background-color: var(--color-black);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
   width: 0%;
   height: 2px;
-  
-  position: absolute;
-  bottom: -6px;
-  left: 0;
+  background-color: var(--color-black);
   border-radius: 20px;
-  transition: all 0.8s ease-in-out;
-  opacity: 0;
-  transform: translateX(-70%);
+  transition: width 0.35s ease;
 }
+
+/* Hover: slide in */
 .custom-link:hover::after {
   width: 100%;
-  transform: translateX(0%);
-  opacity: 1;
-}
-.custom-link::after:active{
-    background-color: var(--color-black);
-
 }
 
-/* nav contact btn */
+/* Active page: always show full underline, no animation needed */
+.custom-link.nav-active::after {
+  width: 100%;
+  transition: none;   /* instant — it's already "there" */
+}
+
+/* ---- Contact button ---- */
 .contact-button {
   min-width: 100px;
-  padding: 5px 6px;
+  padding: 5px 10px;
   margin: 5px;
   cursor: pointer;
   background-color: var(--color-black);
   border: none;
   outline: none;
   color: var(--color-white);
-
   border-radius: 5px;
+  font-size: 0.9rem;
   transition: all 0.3s linear;
-  box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.61);
+  box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-/* nav contact btn effect*/
+
 .contact-button:active {
   transform: translateY(4px);
   box-shadow: none;
@@ -109,23 +94,25 @@ nav ul .custom-link {
 
 .contact-button:hover .arrow {
   transform: translateX(4px);
+  transition: transform 0.2s ease;
 }
 
-/* --- Desktop Styles (Base) --- */
+/* ---- Desktop nav links ---- */
 .nav-links {
   display: flex;
   list-style: none;
   gap: 19px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-btn {
   display: none;
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 5px;
+  padding: 5px 8px;
   border: none;
   border-radius: 5px;
-
   cursor: pointer;
 }
 
@@ -133,7 +120,7 @@ nav ul .custom-link {
   display: none;
 }
 
-/* --- Mobile Styles --- */
+/* ---- Mobile ---- */
 @media screen and (max-width: 768px) {
   .desktop-only {
     display: none;
@@ -148,52 +135,48 @@ nav ul .custom-link {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 35%;
+    width: 55%;
     height: 100vh;
     background-color: white;
     flex-direction: column;
     justify-content: center;
-
     align-items: center;
-    transition: 0.5s ease;
+    gap: 28px;
+    transition: right 0.4s ease;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
   }
 
   .nav-links.active {
     right: 0;
   }
-  .nav-links.active .custom-link {
-    padding: 20px;
+
+  nav ul .custom-link {
+    font-size: 1rem;
+    margin: 0;
+    letter-spacing: 1px;
   }
+
   .mobile-only {
     display: block;
-    margin-top: 20px;
+    margin-top: 10px;
   }
+}
 
-  nav ul .custom-link{
-    font-size: clamp(0.6rem, 1vw, 1rem);
-   
-    margin: 0;
-    padding: 0;
-  }
-} 
-
-
-
-/* --- Tablet Styles (iPad/Tablets) --- */
+/* ---- Tablet ---- */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   nav {
-    padding: 0 15px; /* Tighter padding */
+    padding: 0 15px;
   }
 
   .nav-links {
-    gap: 10px; /* Reduce gap between links */
+    gap: 10px;
   }
 
   nav ul .custom-link {
-    font-size: 0.9rem; /* Smaller font for tablets */
+    font-size: 0.9rem;
     margin: 0 5px;
-    letter-spacing: 1px; /* Reduce letter spacing */
+    letter-spacing: 1px;
   }
 
   .contact-button.desktop-only {
@@ -201,5 +184,3 @@ nav ul .custom-link {
     font-size: 0.85rem;
   }
 }
-
-

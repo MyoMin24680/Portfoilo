@@ -5,10 +5,15 @@ main {
 }
 
 /* Header */
+.header-line {
+  padding: 2rem 1%;
+  
+}
 .header-line h1{
   font-size: 2.5rem;
   text-transform: uppercase;
   color: #1c1c1c;
+
 }
 .header-line hr {
   margin: 17px 0;

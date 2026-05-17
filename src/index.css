@@ -3,23 +3,46 @@
   --color-black: #1c1c1c;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
   font-family: "JetBrains Mono", monospace;
   font-optical-sizing: auto;
-
   font-style: normal;
-  
 }
 
-body {
+html, body {
   background-color: var(--color-white);
-  overflow-x: scroll;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
-section{
-  padding-top: 20px;
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+  background-color: var(--color-white);
+}
+
+section {
+  margin-top: 0 !important;
+  padding-top: 80px;
+}
+
+/* ======= PAGE TRANSITION ======= */
+main {
+  animation: pageFade 0.45s ease both;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

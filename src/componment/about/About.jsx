@@ -8,17 +8,17 @@ const About = () => {
       
       {/* About-1 */}
       
-      <div className="header-line">
+      <div className="header-line" data-aos="fade-up">
         <h1>About me</h1>
         <hr />
       </div>
 
     {/* About-2 */}
     <div className="img-text">
-      <img src={aboutimg} alt="about image" />
+      <img src={aboutimg} alt="about image" data-aos="fade-right"/>
 
    
-      <div className='about-text'>
+      <div className='about-text' data-aos="fade-left">
  <h1>Hello! </h1>
  <p>
          I am a multi-faceted it professional with a comprehensive

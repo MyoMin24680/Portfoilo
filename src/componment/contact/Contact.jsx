@@ -1,4 +1,4 @@
-import React, { useState ,useRef} from "react";
+import React, {  useRef} from "react";
 import "./Contact.css";
 
 import emailjs from '@emailjs/browser'; // Added EmailJS
@@ -35,7 +35,7 @@ const Contact = () => {
 
   return (
     <main className="contact">
-      <div className="header-line">
+      <div className="header-line" data-aos="fade" data-aos-duration="1200">
         <h1>contact</h1>
 
         <hr />
@@ -43,22 +43,22 @@ const Contact = () => {
 
       {/* START LOGO PART */}
       <div className="contact-body">
-        <div className="logo-part">
+        <div className="logo-part" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
           <img src={logo} alt="" srcset="" />
-         <a 
-  href="mailto:myo371240@gmail.com?subject=Project Inquiry&body=Hi Myo, I would like to talk about..." 
+       <a 
+  href="https://mail.google.com/mail/?view=cm&to=myo371240@gmail.com&su=Project Inquiry&body=Hi Myo, I would like to talk about..."
   className="email-link"
   target="_blank" 
   rel="noopener noreferrer"
 >
-            [myo371240@gmail.com]
-          </a>
+  [myo371240@gmail.com]
+</a>
         </div>
 
         {/* END LOGO PART */}
 
         {/* START FORM PART */}
-        <form  ref={form} onSubmit={sendEmail}>
+        <form  ref={form} onSubmit={sendEmail} data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
           <div className="form-header">
             let's work together!
             <hr />

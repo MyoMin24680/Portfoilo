@@ -27,8 +27,9 @@ const Home = () => {
  }
 
   return (
+<>
 
-   <section id='home'>
+    <section id='home' data-aos="fade-up">
       <header><strong>myo min khaing</strong></header>
 
       <div className="img-gp">
@@ -57,7 +58,7 @@ const Home = () => {
 
    </section>
   
-   
+   </>
    
    
     

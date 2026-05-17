@@ -20,11 +20,12 @@ const Pages = ({section}) => {
     },[section])
   return (
     <>
-        <section ref={refs.home} className={section === 'home' ? 'active' : ''} id='home'><Home/></section>
-        <section ref={refs.about} className={section === 'about' ? 'active' : ''} id='about'><About/></section>
-        <section ref={refs.resume} className={section === 'resume' ? 'active' : ''} id='resume'><Resume/></section>
-        <section ref={refs.project} className={section === 'project' ? 'active' : ''} id='project'><Project/></section>
-        <section ref={refs.contact} className={section === 'contact' ? 'active' : ''} id='contact'><Contact/></section>
+        <section ref={refs.home}><Home /></section>
+      <section ref={refs.about}><About /></section>
+      <section ref={refs.resume}><Resume /></section>
+        <section ref={refs.project}><Project /></section>
+        <section ref={refs.contact}><Contact /></section>
+
     </>
   )
 }
@@ -33,47 +34,3 @@ export default Pages
 
 
 
-// import React, { useEffect, useRef } from 'react';
-// import { Home, About, Resume, Project, Contact } from './index';   // or direct imports
-
-// const Pages = ({ section }) => {
-//   const refs = {
-//     home: useRef(null),
-//     about: useRef(null),
-//     resume: useRef(null),
-//     project: useRef(null),
-//     contact: useRef(null),
-//   };
-
-//   useEffect(() => {
-//     const targetRef = refs[section?.toLowerCase()];   // safer lowercase match
-//     if (targetRef?.current) {
-//       targetRef.current.scrollIntoView({ 
-//         behavior: 'smooth', 
-//         block: 'start'     // makes sure it goes to very top
-//       });
-//     }
-//   }, [section]);   // runs when section changes
-
-//   return (
-//     <>
-//       <section ref={refs.home}    id="home"    className={section === 'home' ? 'active' : ''}>
-//         <Home />
-//       </section>
-//       <section ref={refs.about}   id="about"   className={section === 'about' ? 'active' : ''}>
-//         <About />
-//       </section>
-//       <section ref={refs.resume}  id="resume"  className={section === 'resume' ? 'active' : ''}>
-//         <Resume />
-//       </section>
-//       <section ref={refs.project} id="project" className={section === 'project' ? 'active' : ''}>
-//         <Project />
-//       </section>
-//       <section ref={refs.contact} id="contact" className={section === 'contact' ? 'active' : ''}>
-//         <Contact />
-//       </section>
-//     </>
-//   );
-// };
-
-// export default Pages;
