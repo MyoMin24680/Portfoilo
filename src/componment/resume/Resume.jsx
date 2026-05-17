@@ -15,7 +15,7 @@ const Resume = () => {
         ref={headerRef}
         className={`header-line reveal ${headerVisible ? 'visible' : ''}`}
       >
-        <h1>[ My Resume ]</h1>
+        <h1>Career Journey</h1>
         <hr />
       </div>
 
