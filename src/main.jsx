@@ -9,6 +9,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 // ၁။ AOS import ကို ဒီနေရာ (ထိပ်ဆုံး) မှာပဲ ထားရပါမယ်
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 export const Root = () => {
   // ၂။ AOS.init ကို useEffect ထဲမှာ ထားတာ မှန်ပါတယ်
@@ -30,6 +31,7 @@ export const Root = () => {
         <AllRoute />
       </div>
       <Footer />
+      <SpeedInsights />
     </Router>
   );
 };
